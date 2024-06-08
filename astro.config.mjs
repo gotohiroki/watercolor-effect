@@ -27,8 +27,8 @@ console.log(
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/",
-  site: SITE_URL,
+  base: "/dist",
+  site: "https://gotohiroki.github.io",
   compressHTML: false, // デフォルト: true
   markdown: {
     drafts: true,
