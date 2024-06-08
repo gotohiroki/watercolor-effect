@@ -1,0 +1,37 @@
+{
+  "name": "astro-template",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build && npm run replaceRelativePathInCss && npm run replaceRelativePathInHtml",
+    "preview": "astro preview",
+    "astro": "astro",
+    "htmlMinifier": "node _build-options/htmlMinifier.mjs",
+    "replaceRelativePathInCss": "node _build-options/replaceRelativePathInCss.mjs",
+    "replaceRelativePathInHtml": "node _build-options/replaceRelativePathInHtml.mjs"
+  },
+  "dependencies": {
+    "astro": "^4.4.1",
+    "gsap": "^3.12.5",
+    "lil-gui": "^0.19.1",
+    "stats.js": "^0.17.0",
+    "three": "^0.161.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "dotenv": "^16.4.5",
+    "glob": "^10.3.10",
+    "html-minifier": "^4.0.0",
+    "postcss-merge-queries": "^1.0.3",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "sass": "^1.71.1",
+    "vite-plugin-glsl": "^1.2.1"
+  },
+  "volta": {
+    "node": "20.8.0",
+    "npm": "10.1.0"
+  }
+}

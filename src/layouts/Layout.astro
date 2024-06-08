@@ -1,0 +1,60 @@
+---
+import "../styles/app.scss";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  themeColor?: string;
+  ogType?: string;
+  ogImg?: string;
+  ogUrl?: string;
+  thumbnail?: string;
+  twiiter?: string;
+}
+
+const SITE = import.meta.env.SITE;
+const {
+  title = "Watercolor Effect | HIROKI GOTO",
+  description = "水彩画のようなエフェクトを作成 | WebGL, GLSL, Three.js",
+  themeColor = "#fff",
+  ogType = "website",
+  ogImg = "assets/img/head/ogp.png",
+  ogUrl = import.meta.env.SITE,
+  thumbnail = "assets/img/head/thumbnail.webp",
+  twiiter = "@hiroki_mmmp",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="email=no,telephone=no,address=no" />
+    <meta name="theme-color" content={themeColor} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={SITE} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:image" content={SITE + ogImg} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={twiiter} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <!-- <meta name="thumbnail" content={SITE + thumbnail} /> -->
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..800&display=swap" rel="stylesheet" />
+    <!-- <link rel="apple-touch-icon" href="/assets/img/head/apple-touch-icon.webp" /> -->
+    <link rel="icon" type="image/svg+xml" href="/assets/img/head/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
